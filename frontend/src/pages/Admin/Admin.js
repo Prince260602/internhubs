@@ -134,7 +134,7 @@ function Admin() {
   const PostJob = async jobDetails => {
     try {
       await axios
-        .post(`http://localhost:5500/jobs/create`, jobDetails)
+        .post(`https://internhubs.onrender.com/jobs/create`, jobDetails)
         .then(res => {
           console.log(res.data.message);
           toast.success("Job Posted!", {
@@ -167,7 +167,7 @@ function Admin() {
     // console.log(jobId);
     if (jobId) {
       await axios
-        .delete(`http://localhost:5500/jobs/delete/${jobId}`)
+        .delete(`https://internhubs.onrender.com/jobs/delete/${jobId}`)
         .then(res => {
           console.log(res.data.message);
           window.location.reload(); //temporary used
@@ -186,7 +186,7 @@ function Admin() {
     if (jobdetail.job_id) {
       await axios
         .put(
-          `http://localhost:5500/jobs/${jobdetail.job_id}`,
+          `https://internhubs.onrender.com/jobs/${jobdetail.job_id}`,
           jobdetail
         )
         .then(res => {
@@ -201,7 +201,7 @@ function Admin() {
       console.log(`Please SignIn First`);
     }
     // if(jobId){
-    //   await axios.put(`http://localhost:5500/jobs/${jobId}`,jobdetail)
+    //   await axios.put(`https://internhubs.onrender.com/jobs/${jobId}`,jobdetail)
     //   .then((res)=>{
     //     console.log(res.data.message);
     //   })
@@ -219,7 +219,7 @@ function Admin() {
     const getdata = async () => {
       console.log("UseEffect is Working.");
       await axios
-        .get("http://localhost:5500/jobs/all")
+        .get("https://internhubs.onrender.com/jobs/all")
         .then(res => {
           console.log("Job Data : ", res.data);
           setJobsarr(res.data);
@@ -238,7 +238,7 @@ function Admin() {
     try {
       await axios
         .post(
-          `http://localhost:5500/internships/create`,
+          `https://internhubs.onrender.com/internships/create`,
           internDetails
         )
         .then(res => {
@@ -276,7 +276,7 @@ function Admin() {
     if (interndetail.internship_id) {
       await axios
         .put(
-          `http://localhost:5500/internships/update/${interndetail.internship_id}`,
+          `https://internhubs.onrender.com/internships/update/${interndetail.internship_id}`,
           interndetail
         )
         .then(res => {
@@ -290,7 +290,7 @@ function Admin() {
     } else {
       console.log(`Please SignIn First`);
     }
-    //http://localhost:5500/internships/update/${internId}
+    //https://internhubs.onrender.com/internships/update/${internId}
   };
 
   //Delete Internship
@@ -299,7 +299,7 @@ function Admin() {
     if (internId) {
       await axios
         .delete(
-          `http://localhost:5500/internships/delete/${internId}`
+          `https://internhubs.onrender.com/internships/delete/${internId}`
         )
         .then(res => {
           console.log(res.data.message);
@@ -318,7 +318,7 @@ function Admin() {
     const getdata = async () => {
       console.log("Internships UseEffect is Working.");
       await axios
-        .get("http://localhost:5500/internships/show/all")
+        .get("https://internhubs.onrender.com/internships/show/all")
         .then(res => {
           setInternsarr(res.data);
         })
