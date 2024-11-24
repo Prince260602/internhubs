@@ -137,7 +137,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://internhubs.onrender.com/", // Your backend API URL
+  baseURL: "https://internhubs.onrender.com", // Your backend API URL
 });
 
 api.interceptors.request.use(
