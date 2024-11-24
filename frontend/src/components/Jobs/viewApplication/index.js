@@ -19,6 +19,8 @@ const ViewApplication = () => {
     setSelectedItem(label);
   };
 
+
+  
   const renderRightSection = () => {
     switch (selectedItem) {
       case "Access database":

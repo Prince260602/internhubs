@@ -32,29 +32,47 @@ const Jobpage = () => {
   const [internship, setInternship] = useState([]);
   const [category,setcategory]=useState(["All","Jobs","Internships"]);
   const [ipcat,setipCat]=useState("");
-  //Below is Remaining
+  // //Below is Remaining
+  // useEffect(() => {
+  //   const fetchJobs = async (ipcat="") => {
+  //     try {
+  //       setLoading(true);
+  //       const res = await api.get("jobs/all");
+  //       if(ipcat == "Jobs"){
+  //         res.data = res.data.filter((obj)=> obj.job_id);
+  //       }
+  //       if(ipcat == "Internships"){
+  //         res.data = res.data.filter((obj)=> obj.internship_id);
+  //       }
+  //       // console.log("After Filter : ",res.data);
+  //       setJob(res.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchJobs(ipcat);
+  // }, [ipcat]);
+
+
+
   useEffect(() => {
-    const fetchJobs = async (ipcat="") => {
+    const fetchJobs = async (ipcat = "") => {
       try {
         setLoading(true);
         const res = await api.get("jobs/all");
-        if(ipcat == "Jobs"){
-          res.data = res.data.filter((obj)=> obj.job_id);
-        }
-        if(ipcat == "Internships"){
-          res.data = res.data.filter((obj)=> obj.internship_id);
-        }
-        // console.log("After Filter : ",res.data);
+        // Add filtering logic here as needed
         setJob(res.data);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching jobs:", error.response || error.message);
       } finally {
         setLoading(false);
       }
     };
     fetchJobs(ipcat);
   }, [ipcat]);
-
+  
 
   const { palette } = useTheme();
   const dispatch = useDispatch();

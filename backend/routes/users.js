@@ -47,35 +47,83 @@ router.get("/me", fetchuser, async (request, response) => {
   const user = await User.findById(id)
   response.status(200).json({ user });
 });
-// Register route
+// // Register route
+// router.post("/register", async (req, res) => {
+//   let success = false;
+//   try {
+//     const { firstName, lastName, email, password, userName } = req.body;
+
+//     // Check for missing fields
+//     if (!userName) {
+//       return res.status(400).json({ success, error: "Username is required" });
+//     }
+
+//     let user = await User.findOne({ email });
+//     if (user) {
+//       return res.status(400).json({ success, error: "User already exists" });
+//     }
+
+//     const salt = await bcrypt.genSalt(10);
+//     const secPass = await bcrypt.hash(password, salt);
+
+//     user = await User.create({
+//       firstName,
+//       lastName,
+//       password: secPass,
+//       email,
+//       userName: userName,
+//     });
+
+//     const data = { user: { id: user.id } };
+//     const authtoken = jwt.sign(data, JWT_SECRET, { expiresIn: "5d" });
+
+//     success = true;
+//     res.json({ success, authtoken });
+//   } catch (error) {
+//     console.error(error.message);
+//     res.status(500).send("Internal Server Error!");
+//   }
+// });
+
+
+
+
 router.post("/register", async (req, res) => {
   let success = false;
   try {
-    const { firstName, lastName, email, password, userName } = req.body;
-
-    // Check for missing fields
-    if (!userName) {
-      return res.status(400).json({ success, error: "Username is required" });
+    let user = await User.findOne({ email: req.body.email });
+    if (user) {
+      return res.status(400).json({
+        success,
+        error: "Sorry, a user with this email already exists",
+      });
     }
 
-    let user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({ success, error: "User already exists" });
+    if (!req.body.userName) {
+      console.log("Username is required");
+      return res.status(400).json({
+        success,
+        error: "Username is required",
+      });
     }
 
     const salt = await bcrypt.genSalt(10);
-    const secPass = await bcrypt.hash(password, salt);
+    const secPass = await bcrypt.hash(req.body.password, salt);
 
     user = await User.create({
-      firstName,
-      lastName,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       password: secPass,
-      email,
-      userName: userName,
+      email: req.body.email,
+      username: req.body.userName,
     });
 
-    const data = { user: { id: user.id } };
-    const authtoken = jwt.sign(data, JWT_SECRET, { expiresIn: "5d" });
+    const data = {
+      user: {
+        id: user.id,
+      },
+    };
+    const authtoken = jwt.sign(data, "cat");
 
     success = true;
     res.json({ success, authtoken });
@@ -85,8 +133,9 @@ router.post("/register", async (req, res) => {
   }
 });
 
+
 // Profile route (protected)
-router.get("/profile", fetchuser, async (req, res) => {
+router.get("/user/profile", fetchuser, async (req, res) => {
   try {
     const { id } = req.user;
     const user = await User.findById(id);
@@ -137,6 +186,13 @@ router.post("/logout", (req, res, next) => {
 });
 
 module.exports = router;
+
+
+
+
+
+
+
 
 
 

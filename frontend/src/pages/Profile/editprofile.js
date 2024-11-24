@@ -38,7 +38,7 @@ const Editprofile = () => {
 
   const HandleSumbit = () => {
     alert("details edited successfully!");
-    navigate("/eprofile");
+    navigate("/user/profile");
   }
 
   return (

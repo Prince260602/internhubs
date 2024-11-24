@@ -19,21 +19,23 @@
   
   .skill-button {
     background-color: #4caf50;
+    /* margin-bottom: 18px; */
     color: white;
     border: none;
+ 
     border-radius: 1rem;
-    padding: 0.8rem 1.2rem 0.8rem 0.8rem;
-    display: flex;
+    padding: 1.2rem 1.8rem 0.8rem 1.4rem;
+    /* display: flex; */
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     cursor: pointer;
     transition: all 0.2s ease-out;
     font-size: 0.9rem;
-    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1), 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1), 0 0.5rem 1rem rgba(0, 0, 0, 0.3); */
   }
   .skill-button:hover {
-    background-color: #0ea5e9;
+
     transform: translateY(-0.1rem);
-    box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.1), 0 0.6rem 1rem rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.1), 0 0.6rem 1rem rgba(0, 0, 0, 0.3); */
   }
   

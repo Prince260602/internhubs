@@ -171,7 +171,7 @@ const WorkExperienceForm = ({ onNext, onPrevious, formData, setFormData }) => {
               </div>
             </div>
 
-            <div className="input-text">
+            <div className="input-text1">
               <div className="input-div">
                 <input
                   type="radio"

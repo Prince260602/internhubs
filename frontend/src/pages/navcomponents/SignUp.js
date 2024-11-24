@@ -52,7 +52,7 @@ function SignUp() {
       const data = await response.json();
       console.log(data);
       localStorage.setItem("token", data.authtoken);
-      navigate("/");
+      navigate("/user/eprofile");
     } catch (error) {
       alert(error);
       console.log(error);

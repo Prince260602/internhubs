@@ -32,8 +32,9 @@ const AddJob = ({addjobhandler,jobDetails,setJobDetails}) => {
     <div className="job-container">
       <div className="create-job mt-9">
         <div className="heading">
-            <h2>Post Internship</h2>
+            <h2>Post Jobs</h2>
         </div>
+        <div className="admin-form-container">
         <div className="form">
           <div className="input-text">
             <div className="form-row">
@@ -203,6 +204,7 @@ const AddJob = ({addjobhandler,jobDetails,setJobDetails}) => {
               Post Job
             </button>
           </div>
+        </div>
         </div>
       </div>
     </div>

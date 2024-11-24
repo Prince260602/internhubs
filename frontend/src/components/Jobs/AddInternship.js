@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../componentsCss/employerstyles/addjob.css";
+import "./AddInternship.css";
 import axios from "axios";
 
 const AddInternship = ({
@@ -68,7 +68,7 @@ const AddInternship = ({
         <div className="heading">
           <h2>Post Internship</h2>
         </div>
-        <div className="form">
+        <div className="form1">
           <div className="input-text">
             <div className="form-row">
               <label className="tags">Company Name</label>

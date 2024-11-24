@@ -43,12 +43,15 @@
   color: #cbced4;
 }
 
-.input-text {
+/* .input-text {
   margin: 22px 0;
   display: flex;
   gap: 20px;
   color: #000000;
   font-weight: bold;
+} */
+.input-text1{
+  display: flex;
 }
 
 .input-div input:focus ~ span,
@@ -118,7 +121,7 @@ i {
 }
 .bu button {
   height: 40px;
-  width: 100px;
+  width: 140px;
   border: none;
   border-radius: 5px;
   background-color: #0ea5e9;

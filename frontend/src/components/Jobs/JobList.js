@@ -39,9 +39,9 @@ const JobList = (props) => {
         </section>
 
         <section class="features-area">
-          <div class="">
+          <div class=" mt-5">
             <div class="row">
-              <div class="col-lg-3 col-md-6">
+              <div class="col-lg-3 col-md-6 ">
                 <div class="single-feature">
                   <h4>Search</h4>
                   <p>Discover internship opportunities tailored to your skills and preferences. Use our advanced search tools to find your dream internship.</p>

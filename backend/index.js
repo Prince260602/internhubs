@@ -113,6 +113,7 @@ app.use("/profile", profile);
 app.use("/applyform", internshipApplyRoutes);
 app.use("/send-email", emailRouter);
 
+
 app.use((err, _, res, _next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');

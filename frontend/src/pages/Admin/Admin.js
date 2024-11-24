@@ -343,7 +343,7 @@ function Admin() {
           {/* <button className="adminpanelbtn" onClick={() => setView("users")}>Users</button>
           <button className="adminpanelbtn" onClick={() => setView("jobs")}>Jobs</button> */}
           <button className="adminpanelbtn" onClick={() => setView("postjob")}>
-            Post Internship
+            Post Jobs
           </button>
           <button
             className="adminpanelbtn"

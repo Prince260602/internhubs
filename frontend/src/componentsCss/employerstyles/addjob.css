@@ -1,240 +1,150 @@
+/* Main container */
 .job-container {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  width: 800px;
+  box-sizing: border-box;
 }
 
+/* Job creation form container */
 .create-job {
-  padding: 20px 5%;
-  margin: 20px 0px;
-  min-height: 60vh;
-  width: 70%;
-  background-color: rgb(240, 242, 244);
-  border-radius: 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 900px;
+  padding: 30px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
-#update-job{
-  padding: 20px 5%;
-  margin: 20px 0px;
-  min-height: 60vh;
-  width: 70%;
-  background-color: rgb(240, 242, 244);
-  border-radius: 1rem;
-}
-.heading {
+
+.create-job .heading {
   text-align: center;
   margin-bottom: 20px;
 }
-.heading > h2{
-  font-weight: 600;
+
+.create-job .heading h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
 }
 
-.form-job {
-  padding: 20px;
-  outline: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
+/* Default grid layout for larger screens */
+.admin-form-container .form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
-.form-row,#postbtn {
-  margin-bottom: 10px;
-  width: 100%;
+/* Form field styling */
+.input-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-#updatejobbtns{
-  margin-bottom: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-.box-fill {
-  width: auto;
+
+.form-row {
+  margin-bottom: 15px;
 }
 
 .tags {
-  font-weight: bold;
-  display: contents;
-}
-
-.form-flex {
-  display: flex;
-  gap: 20px;
-  color: #000000;
-  font-weight: bold;
-}
-
-input,
-select{
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.created {
-  padding: 10px 20px;
-  margin-top: 30px;
-  width: 7rem;
-  background-color: skyblue;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-#updatejobbtn{
-  width: 10rem;
-}
-#postjobbtn{
-  width: 9rem;
-}
-.created:hover {
-  background-color: black;
-  color: white;
-}
-
-.form-holder {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-height: 100vh;
-  margin-top: 80px;
-  height: 550px;
-}
-
-.form-content {
-  border: 3px solid #fff;
-  display: inline-block;
-  width: 70%;
-  min-width: 540px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  box-shadow: 0 -5px 3px -3px black, 0 5px 3px -3px;
-  text-align: left;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-.profile-container {
-  padding: 30px;
-  min-height: 93vh;
-}
-
-.profile-heading {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.profile-paper {
-  padding: 20px;
-  outline: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.input-container {
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.input-label {
-  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 600;
   margin-bottom: 5px;
-  position: inherit;
-  padding: 10px;
-  font-size: medium;
-  float: left;
+  color: #555;
 }
 
-.text-input,
-.bio-textarea,
-.phone-input {
-  width: 100%;
+.form-control {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.bio-textarea {
+.form-control:focus {
+  border-color: #007bff;
+}
+
+textarea.form-control {
   resize: vertical;
-  min-height: 120px;
+  max-height: 250px;
 }
 
-.update-button {
-  padding: 10px 50px;
-  margin-top: 30px;
-  background-color: #31390f;
-  color: #fff;
+.form-control::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+/* Button styling */
+button.created {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
-.update-button:hover {
-  background-color: #494949;
+button.created:hover {
+  background-color: #0056b3;
 }
 
-@media (max-width:1095px){
-  #update-job{
-    width: 80%;
-  }
-}
-@media (max-width:925px){
-  #update-job{
-    width: 85%;
-  }
-}
-@media (max-width:825px){
-  #update-job{
-    width: 90%;
-  }
-}
-@media (max-width:740px){
-  #update-job{
-    width: 100%;
-  }
-}
-@media (max-width:640px) {
-  .create-job {
-    width: 100%;
-  }
-}
-
-@media (max-width:768px) {
+/* Adjustments for smaller screens (Tablet) */
+@media screen and (max-width: 768px) {
   .create-job {
     width: 90%;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
+    padding: 25px;
   }
 
-  .input-text {
-    display: flex;
-    flex-direction: column;
-  }
-  .form-row{
-    align-items: start;
+  .heading h2 {
+    font-size: 1.8rem;
   }
 
   .form {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .form-row {
+    margin-bottom: 12px;
+  }
+
+  .form-control {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  button.created {
+    font-size: 1.1rem;
+    padding: 12px 15px;
+  }
+}
+
+/* Further adjustments for mobile (Mobile Portrait) */
+@media screen and (max-width: 480px) {
+  .create-job {
+    padding: 20px;
+  }
+
+  .create-job .heading h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-control {
+    font-size: 0.95rem;
     padding: 10px;
   }
 
-  .created {
-    padding: 5px 10px;
+  button.created {
+    font-size: 1rem;
   }
 }

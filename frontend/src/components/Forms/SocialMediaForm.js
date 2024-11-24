@@ -75,7 +75,7 @@ const SocialMediaForm = ({ formData, onNext, setFormData, onPrevious }) => {
         </div>
       </div>
       <div className="buttons button_space">
-        <button style={{ width: "100px" }} onClick={handlePrevious}>
+        <button style={{ width: "180px" }} onClick={handlePrevious}>
           Previous
         </button>
         <button type="submit" style={{ width: "100px" }}>

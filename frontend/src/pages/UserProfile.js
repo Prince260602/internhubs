@@ -9,6 +9,7 @@ import SocialMediaForm from "../components/Forms/SocialMediaForm";
 import UserSkillSetForm from "../components/Forms/UserSkillSetForm";
 import "../componentsCss/UserProfile.css";
 import "../componentsCss/confirmationPage.css";
+import api from "../api/base"; // Update the path as needed
 
 export const globlUserData = {};
 
@@ -16,15 +17,7 @@ const MultiStepForm = () => {
   useEffect(() => {
     const fetchLoggedInUser = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:5500/user/login/verify",
-          {
-            headers: {
-              "Content-Type": "application/json",
-              authtoken: localStorage.getItem("auth-token"),
-            },
-          }
-        );
+        const response = await api.get("/user/login/verify");
         console.log("This is the response", response);
         if (response.status === 401) {
           navigate("/user/login");
@@ -81,23 +74,19 @@ const MultiStepForm = () => {
     setActiveStep(activeStep - 1);
   };
   const navigate = useNavigate();
-  const handleSubmit = () => {
+
+
+
+  const handleSubmit = async () => {
     globlUserData["userGlobalData"] = formData;
     try {
-      axios
-        .post("http://localhost:5500/test", formData)
-        .then(function (response) {
-          setMessage("Your profile has been created successfully");
-        })
-        .catch(function (error) {
-          setMessage("Something went wrong, please try again later");
-          console.log(error);
-        });
+      const response = await api.post("/profile/addprofile", formData);
+      setMessage("Your profile has been created successfully");
       navigate("/user/profile");
     } catch (error) {
-      setMessage("There is some problem with the server!");
+      setMessage("Something went wrong, please try again later");
+      console.error("Error:", error);
     }
-    // console.log(message);
     alert(message);
   };
 

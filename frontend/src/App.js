@@ -56,7 +56,7 @@ function App() {
           <div className="pages">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/user/profile" element={<UserProfile />} />
+              <Route path="/user/eprofile" element={<UserProfile />} />
               <Route path="/user/applications" element={<Applications />} />
               <Route path="/user/login" element={<LogIn />} />
               <Route path="/user/register" element={<SignUp />} />
@@ -76,7 +76,7 @@ function App() {
                 )}
               </Route> */}
 
-              <Route path="/eprofile" element={<Profile />} />
+              <Route path="/user/profile" element={<Profile />} />
               <Route path="/eprofile/edit" element={<Editprofile/>}/>
               <Route path="/jobpage" element={<Jobpage />} />
               <Route path="/search/location/:location" element={<Jobpage />} />

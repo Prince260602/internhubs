@@ -24,6 +24,7 @@ const personalDetailsSchema = new mongoose.Schema(
       type: String,
       required: true,
       maxlength: 255,
+      unique: true,
     },
     Address: {
       type: String,
